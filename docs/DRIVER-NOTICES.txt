@@ -1,0 +1,3 @@
+Titan Virtual Camera uses an AVStream descriptor/range layout adapted from Microsoft's avssamp sample, Copyright (c) 1999-2001 Microsoft Corporation, under the Microsoft Public License (MS-PL). The full license accompanies this distribution. Upstream: https://github.com/microsoft/Windows-driver-samples/tree/main/avstream/avssamp
+
+Titan-owned driver contributions are separate from the MIT-licensed public app/SDK. Driver source is private. Microsoft-origin portions retain their original rights and notices; separate evaluation/OEM terms do not restrict those rights. No Microsoft product endorsement or certification is implied.
