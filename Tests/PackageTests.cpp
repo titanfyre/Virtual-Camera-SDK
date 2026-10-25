@@ -29,6 +29,9 @@ int wmain(int count,wchar_t** args){
         require(CopyFileW((package/L"TitanVirtualCamera.sys").c_str(),(copy/L"TitanVirtualCamera.sys").c_str(),FALSE)!=FALSE);
         {std::ofstream inf(copy/L"TitanVirtualCamera.inf",std::ios::binary|std::ios::app);inf<<"\r\n; altered package\r\n";inf.close();require(!inf.fail());}
         require(!Setup::SignedPackageTrusted(copy.wstring()));
+        require(CopyFileW((package/L"TitanVirtualCamera.inf").c_str(),(copy/L"TitanVirtualCamera.inf").c_str(),FALSE)!=FALSE);
+        {std::fstream catalog(copy/L"TitanVirtualCamera.cat",std::ios::binary|std::ios::in|std::ios::out);char first=0;catalog.read(&first,1);first^=1;catalog.seekp(0);catalog.write(&first,1);catalog.close();require(!catalog.fail());}
+        require(!Setup::SignedPackageTrusted(copy.wstring()));
     }
     std::cout<<checks<<" read-only package identity/trust checks passed; no device installation.\n";return 0;
 }

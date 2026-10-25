@@ -6,7 +6,7 @@ Build a branded camera source, an automated video fixture, a generated teaching 
 
 ![Virtual Camera SDK](docs/overview.svg)
 
-**Status: developer preview.** The x64 driver candidate is prepared for Microsoft signing. The public preview ZIP contains the native frame producer, C++ SDK, examples and installer source. Unsigned driver files and nonfunctional setup executables are not distributed in that ZIP. Public app/SDK source is MIT; the private driver has separate evaluation/commercial terms.
+**Microsoft-signed evaluation bundle for Windows x64.** Application 0.1.1 includes the verified Microsoft-signed AVStream driver 0.1.0.0, self-contained UI and console installers, the native frame producer, C++ SDK and example sources. Public app/SDK source is MIT; the private driver has separate evaluation/commercial terms. See [validation](docs/VALIDATION.md) for the qualified boundary.
 
 ## The current contract
 
@@ -21,13 +21,13 @@ The driver uses documented Windows AVStream/KS facilities. It does not intercept
 
 ## Install and run
 
-1. Get a matching **Microsoft-signed evaluation package** from the project's [Releases](https://github.com/titanfyre/Virtual-Camera-SDK/releases) when available. Ask `titancsa` for a product-specific evaluation access key.
-2. Extract the full ZIP and run `VirtualCameraSetup.exe` as administrator. Choose **Install / reinstall**. Restart Windows only if setup requests it.
+1. Download and extract the complete **Microsoft-signed evaluation ZIP** from [Releases](https://github.com/titanfyre/Virtual-Camera-SDK/releases). Ask `titancsa` for a product-specific evaluation access key.
+2. Run `VirtualCameraSetup.exe` as administrator. Choose **Install / reinstall**. Restart Windows only if setup requests it.
 3. Open `CameraStudio.exe`, enter the access key and select **Start color bars**.
 4. In your capture application, select **Titan Virtual Camera**. Camera privacy/device policy and capture-application format support still apply.
 5. Select **Stop producer** or close the application to release ownership and return output to black. Uninstall through the setup UI or `VirtualCameraSetupConsole.exe /uninstall`.
 
-The current preview download cannot install the unsigned candidate. Setup source is ready for the signed return; it verifies the exact INF identity, trusted Microsoft hardware-publisher catalog and INF/SYS catalog membership. It never enables test-signing, changes Secure Boot, restarts Windows automatically or touches another camera's package.
+Both setup executables embed the same signed INF, CAT and SYS; no separate driver download is required. Setup verifies the exact INF identity, the trusted Microsoft hardware-publisher catalog under Microsoft-root policy and INF/SYS catalog membership. It never enables test-signing, changes Secure Boot, restarts Windows automatically or touches another camera's package.
 
 ## Minimal C++ integration
 
@@ -79,7 +79,9 @@ That directory must contain the matching `TitanVirtualCamera.inf`, `.cat` and `.
 
 ## Validation and limits
 
-The Windows 10 build 19045 VM candidate passed 499 checks with real KS pixels, 256 submissions and 16 capture open/close cycles, plus 67 checks of a two-second signed permission expiry, both normally and with Driver Verifier enabled before loading. Exact package removal and driver unload also passed. Restricted-token producer access, including zero-access overlapped opens, was refused. Administrator zero-access, read-only and write-only control opens were refused before ownership or state changes. These runs used a temporary guest lab signature; the returned Microsoft-signed package is still pending. See [validation](docs/VALIDATION.md) for measured checks and remaining work. Offline checks also validate fixed frame headers, malformed lengths and package identity/trust refusal. Static analysis and a Microsoft signature cannot establish universal compatibility, a particular capture application's behavior, physical latency, WHQL certification or absence of defects. Windows 11, consumer application and physical GPU/camera-stack qualification must be reported only after those tests pass.
+The returned Microsoft-signed driver passed isolated Windows 10 build 19045 x64 campaigns normally and under standard Driver Verifier, with test-signing disabled. Each campaign passed **499 real-KS/frame/lifecycle checks** and **67 two-second signed-permission expiry checks**. They included 256 frame submissions, 16 capture open/close cycles, black fallback, producer ownership and restricted/incomplete-access refusal. The bundled console installer completed installation and exact device/package removal; the installed Driver Store SYS matched the signed return, the camera driver unloaded and no new minidump was observed. UI setup shares that core; its signed resources were separately compared byte for byte, rather than claiming automated UI interaction.
+
+Offline checks cover 100,010 protocol cases, 11 basic identity/trust checks and 25 actual signed-package acceptance/tamper-refusal checks; protocol AddressSanitizer also passes. See [validation](docs/VALIDATION.md) for measured boundaries. Windows 11, representative capture applications/browser permission paths, GPU/camera-stack coexistence and long-duration operation remain unqualified. A signature and bounded tests do not establish universal compatibility, physical latency, WHQL certification or absence of defects.
 
 ## License and responsible use
 

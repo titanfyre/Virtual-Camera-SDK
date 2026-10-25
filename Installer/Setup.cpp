@@ -29,7 +29,21 @@ bool MicrosoftCatalog(const fs::path& path){
     WINTRUST_FILE_INFO file{};file.cbStruct=sizeof(file);file.pcwszFilePath=path.c_str();
     WINTRUST_DATA data{};data.cbStruct=sizeof(data);data.dwUIChoice=WTD_UI_NONE;data.fdwRevocationChecks=WTD_REVOKE_NONE;data.dwUnionChoice=WTD_CHOICE_FILE;data.pFile=&file;data.dwStateAction=WTD_STATEACTION_VERIFY;data.dwProvFlags=WTD_CACHE_ONLY_URL_RETRIEVAL;
     GUID action=WINTRUST_ACTION_GENERIC_VERIFY_V2;LONG status=WinVerifyTrust(nullptr,&action,&data);bool accepted=false;
-    if(status==ERROR_SUCCESS){auto provider=WTHelperProvDataFromStateData(data.hWVTStateData);auto signer=provider?WTHelperGetProvSignerFromChain(provider,0,FALSE,0):nullptr;if(signer&&signer->csCertChain){wchar_t name[512]{};CertGetNameStringW(signer->pasCertChain[0].pCert,CERT_NAME_SIMPLE_DISPLAY_TYPE,0,nullptr,name,512);accepted=_wcsicmp(name,L"Microsoft Windows Hardware Compatibility Publisher")==0;}}
+    if(status==ERROR_SUCCESS){
+        auto provider=WTHelperProvDataFromStateData(data.hWVTStateData);
+        auto signer=provider?WTHelperGetProvSignerFromChain(provider,0,FALSE,0):nullptr;
+        if(signer&&signer->csCertChain&&signer->pChainContext){
+            wchar_t name[256]{},organization[256]{};auto certificate=signer->pasCertChain[0].pCert;
+            CertGetNameStringW(certificate,CERT_NAME_ATTR_TYPE,0,const_cast<char*>(szOID_COMMON_NAME),name,256);
+            CertGetNameStringW(certificate,CERT_NAME_ATTR_TYPE,0,const_cast<char*>(szOID_ORGANIZATION_NAME),organization,256);
+            CERT_CHAIN_POLICY_PARA policy{};policy.cbSize=sizeof(policy);
+            CERT_CHAIN_POLICY_STATUS verdict{};verdict.cbSize=sizeof(verdict);
+            // Validate Microsoft's root public key, never just a certificate's display name.
+            bool microsoftRoot=CertVerifyCertificateChainPolicy(CERT_CHAIN_POLICY_MICROSOFT_ROOT,signer->pChainContext,&policy,&verdict)&&verdict.dwError==ERROR_SUCCESS;
+            if(!microsoftRoot){policy.dwFlags=MICROSOFT_ROOT_CERT_CHAIN_POLICY_CHECK_APPLICATION_ROOT_FLAG;verdict.dwError=ERROR_SUCCESS;microsoftRoot=CertVerifyCertificateChainPolicy(CERT_CHAIN_POLICY_MICROSOFT_ROOT,signer->pChainContext,&policy,&verdict)&&verdict.dwError==ERROR_SUCCESS;}
+            accepted=microsoftRoot&&!_wcsicmp(name,L"Microsoft Windows Hardware Compatibility Publisher")&&!_wcsicmp(organization,L"Microsoft Corporation");
+        }
+    }
     data.dwStateAction=WTD_STATEACTION_CLOSE;WinVerifyTrust(nullptr,&action,&data);return accepted;
 }
 bool CatalogMember(const fs::path& directory,const wchar_t* name){
