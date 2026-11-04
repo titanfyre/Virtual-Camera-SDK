@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<ItemGroup Label="ProjectConfigurations"><ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration></ItemGroup>
+<PropertyGroup Label="Globals"><ProjectGuid>{8D606154-4D73-43A4-BDEF-3CF6367BC813}</ProjectGuid><WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion></PropertyGroup>
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+<PropertyGroup Label="Configuration"><ConfigurationType>Driver</ConfigurationType><DriverType>WDM</DriverType><PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset><TargetVersion>Windows10</TargetVersion><_NT_TARGET_VERSION>0xA000008</_NT_TARGET_VERSION><DriverTargetPlatform>Desktop</DriverTargetPlatform><UseDebugLibraries>false</UseDebugLibraries></PropertyGroup>
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+<PropertyGroup><OutDir>$(MSBuildThisFileDirectory)..\bin\</OutDir><IntDir>$(MSBuildThisFileDirectory)..\obj\</IntDir><TargetName>TitanVirtualCamera</TargetName><SignMode>Off</SignMode><EnableInf2cat>false</EnableInf2cat><SkipPackageVerification>true</SkipPackageVerification><SupportsPackaging>false</SupportsPackaging></PropertyGroup>
+<ItemDefinitionGroup><ClCompile><WarningLevel>Level4</WarningLevel><TreatWarningAsError>true</TreatWarningAsError><AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\SDK;$(MSBuildThisFileDirectory)..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><EnablePREfast>true</EnablePREfast><ControlFlowGuard>Guard</ControlFlowGuard><Optimization>MaxSpeed</Optimization><BufferSecurityCheck>true</BufferSecurityCheck><ExceptionHandling>false</ExceptionHandling><RuntimeTypeInfo>false</RuntimeTypeInfo><LanguageStandard>stdcpp17</LanguageStandard></ClCompile><Link><AdditionalDependencies>ks.lib;wdmsec.lib;cng.lib;%(AdditionalDependencies)</AdditionalDependencies><AdditionalOptions>/INTEGRITYCHECK /guard:cf /PDBALTPATH:%_PDB% %(AdditionalOptions)</AdditionalOptions></Link></ItemDefinitionGroup>
+<ItemGroup><ClCompile Include="Driver.cpp" /><Inf Include="TitanVirtualCamera.inf"><SpecifyDriverVerDirectiveDate>false</SpecifyDriverVerDirectiveDate><SpecifyDriverVerDirectiveVersion>false</SpecifyDriverVerDirectiveVersion></Inf></ItemGroup>
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

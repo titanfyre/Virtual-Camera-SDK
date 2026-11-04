@@ -1,0 +1,53 @@
+Virtual-Camera-SDK driver source - file-level license map
+
+Paths below are relative to driver/. Each original source/notice file
+and the generated build wrapper/README is classified once.
+
+LicenseRef-Titan-Evaluation-1.0 denotes the separate Titan Demo Driver
+Source Evaluation License, version 1.0, supplied in LICENSE.txt.
+Only files explicitly marked with that identifier receive those terms.
+The repository root LICENSE and existing user-mode/SDK grants are unchanged.
+
+MIT and MS-PL rows retain their complete prior permissions. The custom
+evaluation license adds no production-use, commercial-use, modification,
+redistribution, timer-preservation or authorization-preservation restriction
+to MIT/MS-PL rows. This exception applies to the whole identified file,
+including interleaved Titan changes in a sample-derived source file.
+
+Retained-Notice rows are attribution/license records: keep them intact;
+the custom evaluation terms do not narrow the licenses they reproduce.
+This map and THIRD-PARTY-LICENSES/ may be reproduced with the source.
+
+PROMINENT SAMPLE EXCEPTION: ALL files in Driver/** are distributed
+under MS-PL, including Titan changes, helper files, INF/resource files
+and project descriptions. Custom evaluation restrictions do not apply
+to those files. This deliberately conservative boundary avoids trying
+to separate mixed Microsoft/Titan contributions inside sample projects.
+
+Complete retained license texts:
+  THIRD-PARTY-LICENSES/MIT-Public-SDK.txt
+  THIRD-PARTY-LICENSES/MIT-Public-SDK-2.txt
+  THIRD-PARTY-LICENSES/MS-PL.txt
+
+MS-PL:
+  Driver/Driver.cpp
+  Driver/TitanVirtualCamera.inf
+  Driver/TitanVirtualCamera.vcxproj
+
+MIT:
+  Common/DriverAuthorizationProtocol.h
+    Prior public source: https://github.com/titanfyre/USB-Trace-SDK/blob/44d198746e632b23bd1c4ee291d261a926fe1bb1/SDK/AuthorizationProtocol.h
+    Retained complete license: THIRD-PARTY-LICENSES/MIT-Public-SDK.txt
+  SDK/CameraProtocol.h
+    Prior public source: https://github.com/titanfyre/Virtual-Camera-SDK/blob/a04ecf86da2ea55f67f281311183b4b1ca42e094/SDK/CameraProtocol.h
+    Retained complete license: THIRD-PARTY-LICENSES/MIT-Public-SDK-2.txt
+
+LicenseRef-Titan-Evaluation-1.0:
+  Build.ps1
+  Common/DriverAuthorization.h
+  Common/DriverAuthorizationPublicKey.h
+  README.md
+
+Retained-Notice:
+  DRIVER-NOTICES.txt
+  Reference/LICENSE

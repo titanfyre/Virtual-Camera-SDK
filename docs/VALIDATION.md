@@ -1,6 +1,6 @@
 # Validation
 
-Application/SDK 0.1.1; returned Microsoft-signed driver 0.1.0.0, Windows x64, AVStream. The signed INF matches the submission, the SYS protected-image digest matches the submitted candidate, and Microsoft catalog trust plus INF/SYS membership pass. Driver source remains private.
+Application/SDK 0.1.1; returned Microsoft-signed driver 0.1.0.0, Windows x64, AVStream. The signed INF matches the submission, the SYS protected-image digest matches the submitted candidate, and Microsoft catalog trust plus INF/SYS membership pass. Demo/evaluation driver source is documented in [driver/README.md](../driver/README.md).
 
 ## Signed distribution and offline checks
 

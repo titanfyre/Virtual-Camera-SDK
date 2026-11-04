@@ -1,0 +1,51 @@
+; Titan Virtual Camera, fixed-format AVStream software capture device.
+[Version]
+Signature="$Windows NT$"
+Class=Camera
+ClassGuid={ca3e7ab9-b4c3-4ae6-8251-579ef933890f}
+Provider=%Provider%
+CatalogFile=TitanVirtualCamera.cat
+DriverVer=10/25/2026,0.1.0.0
+PnpLockdown=1
+[SourceDisksNames]
+1=%Disk%,,,
+[SourceDisksFiles]
+TitanVirtualCamera.sys=1
+[DestinationDirs]
+Copy=13
+[Manufacturer]
+%Provider%=Models,NTamd64.10.0...19041
+[Models.NTamd64.10.0...19041]
+%Device%=Install,ROOT\TitanVirtualCamera
+[Install.NT]
+Include=ks.inf,kscaptur.inf
+Needs=KS.Registration,KSCAPTUR.Registration.NT
+CopyFiles=Copy
+[Copy]
+TitanVirtualCamera.sys
+[Install.NT.Services]
+AddService=TitanVirtualCamera,0x00000002,Service
+[Service]
+DisplayName=%Device%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%13%\TitanVirtualCamera.sys
+[Install.NT.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,%Reference%,Interface
+AddInterface=%KSCATEGORY_VIDEO%,%Reference%,Interface
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,%Reference%,Interface
+[Interface]
+AddReg=InterfaceReg
+[InterfaceReg]
+HKR,,CLSID,,%Proxy%
+HKR,,FriendlyName,,%Device%
+[Strings]
+Provider="Titanfyre"
+Device="Titan Virtual Camera"
+Disk="Titan Virtual Camera package"
+Reference="{9AE0237B-6238-464B-B41A-279538D895A3}"
+Proxy="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_VIDEO_CAMERA="{E5323777-F976-4F5B-9B55-B94699C46E44}"

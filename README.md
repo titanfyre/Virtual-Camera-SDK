@@ -17,7 +17,7 @@ Build a branded camera source, an automated video fixture, a generated teaching 
 
 ![Virtual Camera SDK](docs/overview.svg)
 
-**Microsoft-signed evaluation bundle for Windows x64.** Application 0.1.1 includes the verified Microsoft-signed AVStream driver 0.1.0.0, self-contained UI and console installers, the native frame producer, C++ SDK and example sources. Public app/SDK source is MIT; the private driver has separate evaluation/commercial terms. See [validation](docs/VALIDATION.md) for the qualified boundary.
+**Microsoft-signed evaluation bundle for Windows x64.** Application 0.1.1 includes the verified Microsoft-signed AVStream driver 0.1.0.0, self-contained UI and console installers, the native frame producer, C++ SDK and example sources. Public app/SDK source is MIT; the prebuilt driver has separate evaluation/commercial terms. See [validation](docs/VALIDATION.md) for the qualified boundary.
 
 ## The current contract
 
@@ -72,6 +72,12 @@ The business offering is deployment/integration support and a documented raw-fra
 
 ## Build
 
+Demo/evaluation driver source is available; see [driver/README.md](driver/README.md) for
+build instructions and separate evaluation-source terms. Those terms apply to
+Titan-authored driver code. Third-party source licenses and existing application/SDK
+licenses remain applicable. Full/commercial implementation and private signing or
+activation material are excluded.
+
 The target platform is Windows 10 build 19041 or later, or Windows 11, x64; the live campaign currently covers Windows 10 build 19045 only. Use Visual Studio 2022 C++ desktop tools, CMake 3.20+ and the Windows SDK to build:
 
 ```powershell
@@ -96,6 +102,6 @@ Offline checks cover 100,010 protocol cases, 11 basic identity/trust checks and 
 
 ## License and responsible use
 
-Public app, SDK, examples and installer source: [MIT](LICENSE). The driver is private with separate evaluation/OEM terms. Retained [Microsoft sample notices](docs/DRIVER-NOTICES.txt) and the [MS-PL](docs/LICENSE-Microsoft-Driver-Sample.txt) apply to upstream portions. Microsoft signing is not a product endorsement or WHQL certification.
+Public app, SDK, examples and installer source: [MIT](LICENSE). The prebuilt driver has separate evaluation/OEM terms. Retained [Microsoft sample notices](docs/DRIVER-NOTICES.txt) and the [MS-PL](docs/LICENSE-Microsoft-Driver-Sample.txt) apply to the published `driver/Driver/**` source files, including Titan changes in those files; see [the file-specific license map](driver/LICENSE-MAP.txt). Microsoft signing is not a product endorsement or WHQL certification.
 
 Use only on systems you own or administer with authorization, for legitimate testing, accessibility, video production and integration. Follow applicable law and third-party terms. To the extent permitted by law, the author is not responsible for misuse, unlawful activity or resulting damage; software is supplied without warranty. Mandatory statutory rights and non-excludable liability remain unaffected.
