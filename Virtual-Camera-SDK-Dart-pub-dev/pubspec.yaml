@@ -1,9 +1,0 @@
-name: virtual_camera_sdk
-description: Direct Windows x64 Virtual-Camera-SDK SDK with native operations and exact uint64 identifiers.
-version: 1.0.0
-homepage: https://github.com/titanfyre/Virtual-Camera-SDK
-repository: https://github.com/titanfyre/Virtual-Camera-SDK
-environment:
-  sdk: ">=3.4.0 <4.0.0"
-platforms:
-  windows:
