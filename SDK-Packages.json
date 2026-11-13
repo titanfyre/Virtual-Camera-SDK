@@ -12,6 +12,76 @@
         ]
       },
       "distribution": "Shared native source; registry publication is reported separately below"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-C-ffi",
+      "distribution": "Native C ABI adapter to the original project SDK",
+      "dll": "VirtualCameraSDKJsonSDK.dll",
+      "api_prefix": "virtual_camera_sdk_json_"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-Python-pypi",
+      "language": "Python",
+      "registry": "pypi",
+      "name": "virtual-camera-sdk",
+      "version": "1.0.0",
+      "distribution": "Documented native SDK; registry receipt tracked independently"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-Ruby-rubygems",
+      "language": "Ruby",
+      "registry": "rubygems",
+      "name": "virtual-camera-sdk",
+      "version": "1.0.0",
+      "distribution": "Documented native SDK; registry receipt tracked independently"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-Go-modules",
+      "language": "Go",
+      "registry": "modules",
+      "name": "virtual-camera-sdk",
+      "version": "v1.0.0",
+      "distribution": "Documented native SDK; registry receipt tracked independently"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-Rust-cargo",
+      "language": "Rust",
+      "registry": "cargo",
+      "name": "virtual-camera-sdk",
+      "version": "1.0.0",
+      "distribution": "Documented native SDK; registry receipt tracked independently"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-Java-maven",
+      "language": "Java",
+      "registry": "maven",
+      "name": "virtual-camera-sdk",
+      "version": "1.0.0",
+      "distribution": "Documented native SDK; registry receipt tracked independently"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-Dart-pub-dev",
+      "language": "Dart",
+      "registry": "pub-dev",
+      "name": "virtual_camera_sdk",
+      "version": "1.0.0",
+      "distribution": "Documented native SDK; registry receipt tracked independently"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-NET-nuget",
+      "language": "NET",
+      "registry": "nuget",
+      "name": "VirtualCameraSDK.SDK",
+      "version": "1.0.0",
+      "distribution": "Documented native SDK; registry receipt tracked independently"
+    },
+    {
+      "directory": "Virtual-Camera-SDK-PowerShell-gallery",
+      "language": "PowerShell",
+      "registry": "gallery",
+      "name": "VirtualCameraSDK",
+      "version": "1.0.0",
+      "distribution": "Documented native SDK; registry receipt tracked independently"
     }
   ],
   "notes": "Registry accounts or community acceptance are separate. No missing language binding is represented as implemented.",
