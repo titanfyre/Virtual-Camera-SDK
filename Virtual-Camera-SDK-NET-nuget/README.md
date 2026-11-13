@@ -1,8 +1,6 @@
 # Virtual-Camera-SDK .NET8 SDK
 
-Package ID `VirtualCameraSDK.SDK`. NuGet upload remains on hold at owner request.
-
-```csharp
+Package ID `VirtualCameraSDK.SDK`. ```csharp
 using var client=new TitanCSA.Products.VirtualCameraSDK.Client();
 string statusJson=client.Call("status", "{}");
 ```
