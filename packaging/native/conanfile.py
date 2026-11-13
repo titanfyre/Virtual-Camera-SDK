@@ -1,3 +1,4 @@
+from conan.tools.build import check_min_cppstd
 from conan import ConanFile
 from conan.errors import ConanInvalidConfiguration
 from conan.tools.cmake import CMake, cmake_layout
@@ -10,6 +11,7 @@ class NativeSDK(ConanFile):
     exports_sources = "CMakeLists.txt", "*.cmake.in", "sdk/*", "LICENSE", "licenses/*", "NOTICE*", "README.txt"
     generators = "CMakeToolchain", "CMakeDeps"
     def validate(self):
+        check_min_cppstd(self, 20)
         if str(self.settings.os) != "Windows" or str(self.settings.arch) != "x86_64":
             raise ConanInvalidConfiguration("Windows x64 is required")
     def layout(self):
