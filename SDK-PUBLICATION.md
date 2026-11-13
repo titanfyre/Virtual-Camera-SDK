@@ -11,7 +11,7 @@ Current source layout and registry coverage. A GitHub download is distinct from 
 | Python/pypi | built_fixture_and_production_verified | virtual-camera-sdk [Source](Virtual-Camera-SDK-Python-pypi/) |
 | Python/conda-forge | custom_channel_install_verified_requires_conda_forge_review | [virtual-camera-sdk](https://raw.githubusercontent.com/TitanCSA/sdk-packages/089bc73095aa8eda89bacbe10d0b9e58394b0207/conda-channel) [Source](packaging/conda/) |
 | Rust/cargo | published_install_verified | [virtual-camera-sdk](https://crates.io/crates/virtual-camera-sdk) [Source](Virtual-Camera-SDK-Rust-cargo/) |
-| JavaScript/npm | awaiting_browser_publication_authentication | [virtual-camera-sdk](https://www.npmjs.com/package/virtual-camera-sdk) [Source](Virtual-Camera-SDK-JavaScript-npm/) |
+| JavaScript/npm | registry_publication_requires_action | [virtual-camera-sdk](https://www.npmjs.com/package/virtual-camera-sdk) [Source](Virtual-Camera-SDK-JavaScript-npm/) |
 | Java/maven | published_install_verified | [virtual-camera-sdk](https://central.sonatype.com/artifact/io.github.titancsa/virtual-camera-sdk/1.0.0) [Source](Virtual-Camera-SDK-Java-maven/) |
 | Java/jitpack | published_install_verified | [virtual-camera-sdk](https://jitpack.io/#titanfyre/Virtual-Camera-SDK/java-sdk-v1.0.0) [Source](Virtual-Camera-SDK-Java-maven/) |
 | Go/modules | published_install_verified | [virtual-camera-sdk](https://pkg.go.dev/github.com/titanfyre/Virtual-Camera-SDK/Virtual-Camera-SDK-Go-modules@v1.0.0) [Source](Virtual-Camera-SDK-Go-modules/) |

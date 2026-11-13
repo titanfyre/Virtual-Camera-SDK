@@ -203,7 +203,7 @@
       "api_prefix": "virtual_camera_sdk_json_"
     },
     "JavaScript/npm": {
-      "status": "awaiting_browser_publication_authentication",
+      "status": "registry_publication_requires_action",
       "name": "virtual-camera-sdk",
       "version": "1.0.0",
       "directory": "Virtual-Camera-SDK-JavaScript-npm",
