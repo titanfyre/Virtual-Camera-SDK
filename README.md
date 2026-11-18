@@ -2,17 +2,6 @@
 
 **A Windows AVStream kernel camera driver and compact C++ SDK for sending your own pixels to camera applications.**
 
-<!-- full-version-contact:start -->
-> [!IMPORTANT]
-> **Full version and commercial licensing**
->
-> **Discord username: `titancsa`**
->
-> Open Discord, choose **Friends > Add Friend**, enter **`titancsa`**, then send a direct message. Mention **Virtual Camera SDK** and ask about the **full / production version, commercial use or OEM redistribution**.
->
-> Include your intended use and deployment size to discuss pricing, availability and the appropriate licensing / access instructions.
-<!-- full-version-contact:end -->
-
 Build a branded camera source, an automated video fixture, a generated teaching feed or a test integration. Your application supplies raw frames; Windows sees a camera capture stream. Contact **`titancsa` on Discord** for evaluation access, OEM distribution and integration support.
 
 ![Virtual Camera SDK](docs/overview.svg)
@@ -134,3 +123,16 @@ Pour vcpkg et Conan, configure d abord le registre TitanCSA avec [le guide compl
 
 Les anciens imports Go et versions JitPack gardent leurs tags. Pour les anciennes archives SDK, utilise [les liens de remplacement](https://github.com/TitanCSA/sdk-packages/blob/main/release-assets/URL-MIGRATION.json).
 <!-- central-sdk-packages:end -->
+
+## Commercial integration and support
+
+<!-- full-version-contact:start -->
+> [!IMPORTANT]
+> **Full version and commercial licensing**
+>
+> **Discord username: `titancsa`**
+>
+> Open Discord, choose **Friends > Add Friend**, enter **`titancsa`**, then send a direct message. Mention **Virtual Camera SDK** and ask about the **full / production version, commercial use or OEM redistribution**.
+>
+> Include your intended use and deployment size to discuss pricing, availability and the appropriate licensing / access instructions.
+<!-- full-version-contact:end -->
