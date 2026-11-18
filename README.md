@@ -106,18 +106,18 @@ Les sources, licences, guides API et exemples sont regroupes dans [le depot SDK 
 | Conan | `virtual-camera-sdk` | `conan install --requires=virtual-camera-sdk/0.1.1 -r titancsa --build=missing -s compiler.cppstd=20` |
 | NuGet | `Virtual-Camera-SDK.Native` | `Install-Package Virtual-Camera-SDK.Native -Version 0.1.1` |
 | NuGet | `VirtualCameraSDK.SDK` | `dotnet add package VirtualCameraSDK.SDK --version 1.0.0` |
-| PyPI | `virtual_camera_sdk` | Commande prevue apres publication : `python -m pip install virtual-camera-sdk==1.0.0` |
+| PyPI | `virtual-camera-sdk` | Commande prevue apres publication : `python -m pip install virtual-camera-sdk==1.0.0` |
 | Conda | `virtual-camera-sdk` | `conda install --override-channels -c https://raw.githubusercontent.com/TitanCSA/sdk-packages/089bc73095aa8eda89bacbe10d0b9e58394b0207/conda-channel -c conda-forge virtual-camera-sdk` (canal TitanCSA) |
-| crates.io | `virtual_camera_sdk` | `cargo add virtual-camera-sdk@1.0.0` |
-| npm | `virtual_camera_sdk` | Commande prevue apres publication : `npm install virtual-camera-sdk@1.0.0` |
+| crates.io | `virtual-camera-sdk` | `cargo add virtual-camera-sdk@1.0.0` |
+| npm | `virtual-camera-sdk` | Commande prevue apres publication : `npm install virtual-camera-sdk@1.0.0` |
 | Maven Central | `io.github.titancsa:virtual-camera-sdk` | `io.github.titancsa:virtual-camera-sdk:1.0.0 (pom.xml / Gradle)` |
 | JitPack | `com.github.titanfyre:Virtual-Camera-SDK` | `com.github.titanfyre:Virtual-Camera-SDK:java-sdk-v1.0.0 (avec le depot JitPack)` |
 | Go Modules | `github.com/titanfyre/Virtual-Camera-SDK/Virtual-Camera-SDK-Go-modules` | `go get github.com/titanfyre/Virtual-Camera-SDK/Virtual-Camera-SDK-Go-modules@v1.0.0` |
 | pkg.go.dev | `github.com/titanfyre/Virtual-Camera-SDK/Virtual-Camera-SDK-Go-modules` | `Documentation : https://pkg.go.dev/github.com/titanfyre/Virtual-Camera-SDK/Virtual-Camera-SDK-Go-modules@v1.0.0` |
-| PowerShell Gallery | `virtual_camera_sdk` | `Install-Module VirtualCameraSDK -RequiredVersion 1.0.0 -Scope CurrentUser` |
+| PowerShell Gallery | `VirtualCameraSDK` | `Install-Module VirtualCameraSDK -RequiredVersion 1.0.0 -Scope CurrentUser` |
 | pub.dev | `virtual_camera_sdk` | Commande prevue apres publication : `dart pub add virtual_camera_sdk:1.0.0` |
-| RubyGems | `virtual_camera_sdk` | `gem install virtual-camera-sdk -v 1.0.0` |
-| Packagist | `virtual_camera_sdk` | Commande prevue apres publication : `composer require titancsa/virtual-camera-sdk:1.0.0` |
+| RubyGems | `virtual-camera-sdk` | `gem install virtual-camera-sdk -v 1.0.0` |
+| Packagist | `titancsa/virtual-camera-sdk` | Commande prevue apres publication : `composer require titancsa/virtual-camera-sdk:1.0.0` |
 
 Pour vcpkg et Conan, configure d abord le registre TitanCSA avec [le guide complet](https://github.com/TitanCSA/sdk-packages/tree/main/projects/Virtual-Camera-SDK/README.md). Le guide explique aussi Maven/Gradle, les prerequis et le chargement des DLL. Les pilotes/applications du produit sont installes separement. Les commandes marquees prevues ne sont pas encore disponibles.
 
